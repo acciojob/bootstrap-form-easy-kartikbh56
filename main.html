@@ -2,63 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internship Form - AccioJob</title>
-    <!-- Bootstrap 5 CSS link for responsive and styled components -->
+    <title>Internship Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom styles for aesthetic improvements and readability */
         body {
-            background-color: #f8f9fa; /* Light grey background for the page */
-            font-family: 'Inter', sans-serif; /* Using Inter font for better readability */
-            display: flex;
-            justify-content: center; /* Center the form horizontally */
-            align-items: flex-start; /* Align form to the top vertically */
-            min-height: 100vh; /* Ensure body takes full viewport height */
-            padding: 20px; /* Padding around the form */
-        }
-        .container-fluid {
-            max-width: 900px; /* Limit the maximum width of the form for better presentation */
-            background-color: #ffffff; /* White background for the form container */
-            border-radius: 10px; /* Rounded corners for the container */
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Prominent shadow for depth */
-            padding: 30px; /* Padding inside the container */
-            margin-top: 50px; /* Margin from the top */
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #343a40; /* Dark text color for the heading */
-            font-weight: 600; /* Bolder font for the title */
-        }
-        .form-label {
-            font-weight: 500; /* Slightly bolder labels */
-        }
-        .btn-primary {
-            background-color: #007bff; /* Bootstrap primary blue */
-            border-color: #007bff;
-            border-radius: 0.5rem; /* Rounded button corners */
-            padding: 0.75rem 1.5rem; /* Larger button padding */
-        }
-        .btn-primary:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            border-color: #0056b3;
-        }
-        .form-check {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-    <!-- Main container for the form, ensuring it's fluid but max-width constrained -->
-    <div class="container-fluid">
-        <h2 class="mb-4">Internship Form</h2>
 
-        <!-- The form itself. 'needs-validation' class is crucial for Bootstrap's client-side validation styles.
-             novalidate prevents the browser's default HTML5 validation, letting Bootstrap handle it. -->
+    <div class="container">
         <form class="needs-validation" novalidate>
-            <!-- First Row: First Name, Last Name, Email Address -->
+            <h2 class="text-center my-4">Internship Form</h2>
+
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="first-name-input" class="form-label">First Name</label>
@@ -67,6 +24,7 @@
                         First name required!
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <label for="last-name-input" class="form-label">Last Name</label>
                     <input type="text" class="form-control" id="last-name-input" required>
@@ -74,94 +32,79 @@
                         Last name required!
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <label for="email-input" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email-input" placeholder="xyz@abc.com" required>
+                    <input type="email" class="form-control" id="email-input" required>
                     <div class="invalid-feedback">
                         Email required!
                     </div>
                 </div>
             </div>
 
-            <!-- Second Row: College Name, Graduation Year, Roll No. -->
             <div class="row mb-3">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <label for="college-input" class="form-label">College</label>
                     <input type="text" class="form-control" id="college-input" required>
                     <div class="invalid-feedback">
                         Please provide a valid college.
                     </div>
                 </div>
+
                 <div class="col-md-4">
-                    <label for="graduation-year-select" class="form-label">Graduation Year</label>
-                    <select class="form-select" id="graduation-year-select" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
+                    <label for="graduation-year" class="form-label">Graduation Year</label>
+                    <select class="form-select" id="graduation-year" required>
+                        <option value="">Choose...</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
                     </select>
                     <div class="invalid-feedback">
                         Please select a valid Graduation Year.
                     </div>
                 </div>
-                <div class="col-md-3">
+
+                <div class="col-md-4">
                     <label for="roll-no-input" class="form-label">Roll No.</label>
                     <input type="text" class="form-control" id="roll-no-input" required>
                     <div class="invalid-feedback">
-                        Please provide a valid Roll No.
+                        Please provide a valid Roll no.
                     </div>
                 </div>
             </div>
 
-            <!-- Third Row: Condition Checkbox -->
-            <div class="row mb-3">
-                <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="conditions-checkbox" required>
-                        <label class="form-check-label" for="conditions-checkbox">
-                            Agree to terms and conditions
-                        </label>
-                        <div class="invalid-feedback">
-                            You must agree before submitting.
-                        </div>
-                    </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="conditions-checkbox" required>
+                <label class="form-check-label" for="conditions-checkbox">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
                 </div>
             </div>
 
-            <!-- Submit Button -->
-            <div class="row">
-                <div class="col-12">
-                    <button class="btn btn-primary" type="submit">Submit form</button>
-                </div>
-            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
         </form>
     </div>
 
-    <!-- Bootstrap 5 JavaScript Bundle with Popper for dropdowns, tooltips, etc. (optional for this form, but good practice) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS + custom validation script -->
     <script>
-        // JavaScript for Bootstrap's client-side validation
-        (function () {
-            'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault() // Prevent actual form submission
-                            event.stopPropagation() // Stop event propagation
-                        }
-
-                        // Add 'was-validated' class to the form to trigger validation styles
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
+        // Bootstrap validation
+        (() => {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
     </script>
+
 </body>
 </html>
